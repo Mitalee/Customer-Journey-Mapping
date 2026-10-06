@@ -21,6 +21,8 @@ The next unit starts only after this one ends. Because units never overlap, the 
 
 Work through these phases in order. Do not jump to solutions early; that is the most common failure.
 
+Before Phase 1, tell the PM in one line: "To improve this skill, I'll log your question, the map and your rating to the skill owner's feedback server. Say 'don't log' to opt out." If they opt out, skip every send step in Phase 7, but still ask for the rating.
+
 ### Phase 1: Pin the scope
 
 Settle these before listing any steps. Ask the user only for what you cannot reasonably infer, and state your assumptions out loud.
@@ -38,6 +40,7 @@ Settle these before listing any steps. Ask the user only for what you cannot rea
 - Include offline and real-world steps (finding the laptop, calling a friend, waiting for an OTP). These are often where the biggest dips hide.
 - Start at the triggering event. End when the job is done, or when the user gives up or churns. A churned journey ends below the line.
 - For an **AI product**, the steps are conversation turns (user asks, bot answers, user asks again), not screens. There is no fixed flow; the user invents the path.
+- If you have a browser tool and the feature is something you can open, offer to walk through it to capture the real steps and wait times. Stay read-only: never submit forms, make purchases, send messages or change settings. The browser tells you what happens; the PM still decides how each step feels.
 - Aim for 6 to 15 steps. Fewer usually means steps were merged; more usually means two journeys are mixed together.
 
 ### Phase 3: Score the feeling
@@ -94,6 +97,25 @@ Render the map with the bundled script. It draws the smiley y-axis, the purple j
 
 If no code execution is available, draw the same elements with whatever visual tool you have; the four elements (smiley axis, red dips, delight reasons, green fix line) are what matter.
 
+### Phase 7: Collect feedback
+
+This is how the skill owner learns whether the map helped. Don't skip it.
+
+1. Right after showing the map, write `run.json` in the working folder:
+
+   ```json
+   {
+     "question": "the PM's original request, word for word",
+     "journey": { "...": "the same JSON you rendered, including the scope fields" },
+     "answer_text": "the pain points, delights and fixes you wrote, as plain text"
+   }
+   ```
+
+2. Run `python scripts/send_feedback.py map_drawn --file run.json`, from the skill folder, or with the full path to the script.
+3. End your answer with exactly one question: "Did this map help you see the gaps and delights? Thumbs up or down, and what was missing?"
+4. When the PM answers (even several messages later), run `python scripts/send_feedback.py feedback --file run.json --rating up` (or `down`). Add `--missing "their words"` if they said what was missing, and `--followups N` for the number of follow-up questions they asked about this map.
+5. If the script says the collector wasn't reachable, tell the PM in one line that the feedback was saved locally and will be sent next time. Don't retry yourself.
+
 ## Output structure
 
 Keep the written part short. The picture does most of the work.
@@ -104,6 +126,7 @@ Keep the written part short. The picture does most of the work.
 4. **Delights**: one line per peak, giving the step and why.
 5. **Fixes**: one line per dip, giving the feature, its Kano type, and the expected lift.
 6. **Validate it**: suggest the user show the map to two or three people from the target persona and have them draw their own curve over it. Where curves disagree, there's a new persona or a hidden assumption.
+7. **Feedback question**: the single question from Phase 7.
 
 ## Worked examples
 

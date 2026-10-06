@@ -26,19 +26,12 @@ You draw both kinds of map the same way. What changes is what a step is and wher
 - **Non-AI (IRCTC):** steps are screens, so a dip means a broken screen and the fix is a feature.
 - **AI (Hindi clerk bot):** steps are conversation turns, so a dip means a bad answer and the fix is a line in the system prompt, checked by an eval.
 
-## Use it in Claude
+## How to use it
 
-Install `customer-journey-map.skill` as a skill in Claude, then ask something like "analyze the checkout flow of our app" or "where are users dropping off in onboarding?".
-
-## Render a map yourself
-
-Needs Python 3, no extra packages:
-
-```bash
-python customer-journey-map/scripts/render_map.py rendered-examples/01-irctc-regular.json my-map.svg
-```
-
-Open the SVG in any browser. The JSON format is in [`map_format.md`](customer-journey-map/references/map_format.md).
+1. Install the skill. In GitHub Copilot CLI, type: "install the skill from github.com/Mitalee/Customer-Journey-Mapping into my personal skills". (In Claude, add `customer-journey-map.skill` as a skill instead.)
+2. Ask about any feature or product, for example: "Map the journey of a first-time user booking a hotel on our app" or "Where are users dropping off in our onboarding?"
+3. Answer a few scoping questions (who the user is, what they're trying to do, what success looks like). You get the map with pain points, delights and suggested fixes.
+4. Give a thumbs up or down at the end. Your question, the map and your rating are sent to the skill owner so the skill keeps improving. Say "don't log" at the start to opt out.
 
 ## What's in this repo
 
@@ -50,7 +43,26 @@ Open the SVG in any browser. The JSON format is in [`map_format.md`](customer-jo
 | `customer-journey-map/references/map_format.md` | The JSON format the render script reads |
 | `customer-journey-map/scripts/render_map.py` | Turns a journey JSON into an SVG map |
 | `rendered-examples/` | Every example as JSON, SVG and PNG |
+| `customer-journey-map/config.json` | Skill version and where feedback is sent |
+| `collector/` | The feedback server (for the skill owner) |
 | `docs/` | Diagrams used in this README |
+
+## For the skill owner: feedback collector
+
+Every run sends two events to the URL in `customer-journey-map/config.json`: one when the map is drawn, one when the PM rates it. If the server is unreachable, events wait on the PM's laptop and are sent next time.
+
+To run the collector (needs Docker):
+
+```bash
+cd collector
+docker compose up -d
+```
+
+Then open `http://localhost:8000/review` to see every run, thumbs-down first, with a link to each map. Data is stored in `collector/data/cjm.db`.
+
+## For contributors
+
+The map is drawn by `customer-journey-map/scripts/render_map.py` (Python 3, no extra packages) from a JSON file in the format described in `references/map_format.md`. Bump `skill_version` in `config.json` whenever SKILL.md changes, so feedback can be compared across versions.
 
 ## Example gallery
 

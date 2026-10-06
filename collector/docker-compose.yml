@@ -1,0 +1,12 @@
+services:
+  collector:
+    build:
+      context: ..
+      dockerfile: collector/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # The database file lives here on your computer, outside the container,
+      # so rebuilding or restarting never loses feedback.
+      - ./data:/data
+    restart: unless-stopped
