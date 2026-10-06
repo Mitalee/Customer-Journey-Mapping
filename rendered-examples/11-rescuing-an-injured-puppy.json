@@ -1,0 +1,18 @@
+{
+  "title": "Rescuing an injured puppy",
+  "persona": "Passer-by who finds an injured street animal",
+  "jtbd": "Get the animal safe care fast, and know it recovered",
+  "trigger": "Finds an injured puppy on the street",
+  "scenario": "Searches and coordinates with NGOs alone",
+  "success": "An NGO picks up quickly and shares updates until recovery",
+  "steps": [
+    {"label": "Finds an injured puppy", "score": -1.0},
+    {"label": "Takes photos, location", "score": -0.5},
+    {"label": "Googles nearby NGOs", "score": -1.0, "fix": "Best-fit NGO match", "fix_score": 0.5},
+    {"label": "Calls NGO after NGO", "score": -1.8, "fix": "One request to all", "fix_score": 0.4},
+    {"label": "One NGO agrees", "score": 1.2, "why": "Help is coming"},
+    {"label": "Coordinates pickup", "score": 0},
+    {"label": "No updates for 20 days", "score": -1.8, "fix": "Status updates", "fix_score": 0.8},
+    {"label": "Feels distrust", "score": -1.5}
+  ]
+}

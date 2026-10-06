@@ -1,0 +1,22 @@
+{
+  "title": "Khaata: from sign-up to first recharge",
+  "persona": "Accountant at a small Shopify store selling bike parts",
+  "jtbd": "Get Shopify orders into Tally without manual entry",
+  "trigger": "Signs up on the website while looking for an accounting tool",
+  "scenario": "Sales-led: call, demo, follow-ups, self-serve recharge",
+  "success": "Invoices flowing into Tally at a per-invoice price the owner approves",
+  "steps": [
+    {"label": "Signs up on website", "score": 0.5},
+    {"label": "Gets a sales call", "score": 0},
+    {"label": "Still hunting a free app", "score": -0.5, "fix": "Show free points", "fix_score": 0.5},
+    {"label": "Installs app, books demo", "score": 0.8},
+    {"label": "Same-day demo", "score": 1.5, "why": "Fast, personal demo"},
+    {"label": "Feels it's too expensive", "score": -1.2, "fix": "Rate calculator", "fix_score": 0.2},
+    {"label": "Needs internal approval", "score": -0.8},
+    {"label": "16 days of follow-ups", "score": -0.5},
+    {"label": "Decides before CA objects", "score": 0.5},
+    {"label": "Sees self-serve recharge", "score": 1.2, "why": "Clear per-invoice rate"},
+    {"label": "Recharges", "score": 1.5},
+    {"label": "Waits for setup help", "score": -0.6, "fix": "Guided onboarding", "fix_score": 0.8}
+  ]
+}

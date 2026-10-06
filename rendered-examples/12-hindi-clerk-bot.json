@@ -1,0 +1,16 @@
+{
+  "title": "Hindi clerk bot: asking about a report",
+  "persona": "Office worker who wants replies in Hindi",
+  "jtbd": "Find out where a report stands, in my language",
+  "trigger": "Deadline for a report is coming up",
+  "scenario": "Chat with a bot whose system prompt says 'Hindi clerk'",
+  "success": "A useful answer, always in Hindi script, whatever language I type in",
+  "steps": [
+    {"label": "Asks where the report is", "score": 0.5},
+    {"label": "Bot replies in English", "score": -1.4, "fix": "Hindi-only rule", "fix_score": 0.6},
+    {"label": "Retypes with typos", "score": 0.2},
+    {"label": "Bot understands typos", "score": 1.4, "why": "Gets my typos"},
+    {"label": "Bot replies in Hinglish", "score": -1.5, "fix": "Devanagari rule", "fix_score": 0.9},
+    {"label": "Bot replies in Hindi", "score": 1.8, "why": "Speaks my language"}
+  ]
+}

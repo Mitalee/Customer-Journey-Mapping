@@ -1,0 +1,17 @@
+{
+  "title": "IRCTC: Tatkal booking at 10 am",
+  "persona": "Same professional, now needing to travel tomorrow",
+  "jtbd": "Get any confirmed seat for an urgent trip",
+  "trigger": "Unexpected travel tomorrow; Tatkal window opens",
+  "scenario": "Tatkal rush, peak load",
+  "success": "Any confirmed seat within the first few minutes",
+  "steps": [
+    {"label": "Waits for 10 am window", "score": 0.5},
+    {"label": "Login, CAPTCHA", "score": -1.0, "fix": "Log in early", "fix_score": 0.3},
+    {"label": "Search loads forever", "score": -1.8, "fix": "Virtual queue", "fix_score": -0.2},
+    {"label": "Trains show, seats gone", "score": -2.0},
+    {"label": "Retries another class", "score": -1.5},
+    {"label": "Payment page fails", "score": -2.0, "fix": "Hold seat in queue", "fix_score": -0.5},
+    {"label": "Gives up", "score": -2.0}
+  ]
+}

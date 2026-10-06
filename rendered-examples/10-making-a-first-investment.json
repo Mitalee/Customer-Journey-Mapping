@@ -1,0 +1,18 @@
+{
+  "title": "Making a first investment",
+  "persona": "Salaried professional new to markets",
+  "jtbd": "Start growing savings without losing sleep",
+  "trigger": "A friend talks about the gains he made",
+  "scenario": "First stocks via an investing app",
+  "success": "Invested, understands the holdings, stays calm through a market dip",
+  "steps": [
+    {"label": "Friend shares his gains", "score": 1.0},
+    {"label": "Asks friend questions", "score": 0.8},
+    {"label": "Scattered research online", "score": -1.0, "fix": "Curated basics", "fix_score": 0.4},
+    {"label": "Downloads app, opens account", "score": 0.5},
+    {"label": "Makes first investment", "score": -1.5, "fix": "Guided first buy", "fix_score": 0.3},
+    {"label": "Checks portfolio daily", "score": -0.5},
+    {"label": "Market drops", "score": -1.8, "fix": "Context on drops", "fix_score": -0.4},
+    {"label": "Rides out a few cycles", "score": 1.2, "why": "Confidence builds"}
+  ]
+}

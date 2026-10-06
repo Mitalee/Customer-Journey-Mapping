@@ -1,0 +1,17 @@
+{
+  "title": "Telecom support: reaching a human",
+  "persona": "Adult child helping an elderly parent with a phone issue",
+  "jtbd": "Get the parent's phone problem fixed",
+  "trigger": "The parent's service stops working properly",
+  "scenario": "Tries phone support, then chat",
+  "success": "Issue understood and fixed in one contact",
+  "steps": [
+    {"label": "Service stops working", "score": -0.5},
+    {"label": "Calls support line", "score": -0.3},
+    {"label": "Routed to AI bot", "score": -0.8},
+    {"label": "Tries chat instead", "score": -0.6},
+    {"label": "Same bot again", "score": -1.3, "fix": "Human handoff", "fix_score": 0.5},
+    {"label": "Parent can't explain", "score": -1.8, "fix": "Own-language voice", "fix_score": 0.4},
+    {"label": "Gives up, unresolved", "score": -2.0}
+  ]
+}

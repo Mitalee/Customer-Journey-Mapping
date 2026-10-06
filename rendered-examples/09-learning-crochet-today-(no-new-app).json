@@ -1,0 +1,21 @@
+{
+  "title": "Learning crochet today (no new app)",
+  "persona": "Adult beginner who has never crocheted",
+  "jtbd": "Make a first finished crochet piece",
+  "trigger": "Sees someone's crochet work and wants to try",
+  "scenario": "Self-taught with YouTube and online shopping",
+  "success": "A finished first piece that looks like the tutorial",
+  "steps": [
+    {"label": "Wants to learn crochet", "score": 1.0},
+    {"label": "Searches YouTube", "score": 0.3},
+    {"label": "Too many videos to pick", "score": -0.8, "fix": "One beginner path", "fix_score": 0.6},
+    {"label": "Finds a good tutorial", "score": 1.0},
+    {"label": "Notes materials on paper", "score": 0.2},
+    {"label": "Leaves to buy on Amazon", "score": -0.6},
+    {"label": "Materials arrive", "score": 0.8},
+    {"label": "Crochets, pausing video", "score": -0.5},
+    {"label": "Stuck on a stitch", "score": -1.6, "fix": "Project checklist", "fix_score": 0.3},
+    {"label": "Compares with the video", "score": -0.4},
+    {"label": "Finishes first piece", "score": 1.8, "why": "I made this"}
+  ]
+}

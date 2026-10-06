@@ -1,0 +1,25 @@
+{
+  "title": "MakeMyTrip: booking a hotel in Goa",
+  "persona": "Busy parent booking on a phone, app installed",
+  "jtbd": "Lock in a good-value, well-reviewed hotel for a family trip",
+  "trigger": "Family trip dates agreed on WhatsApp",
+  "scenario": "Search by city, filter by rating",
+  "success": "Booked a hotel the family trusts, within budget, with confirmation in hand",
+  "steps": [
+    {"label": "Decides to book a hotel", "score": 1.0},
+    {"label": "Opens the app", "score": 0.8},
+    {"label": "App slow to load", "score": -0.5, "fix": "Faster start", "fix_score": 0.6},
+    {"label": "Goes to Hotels tab", "score": 0.6},
+    {"label": "Types Goa", "score": 0.7},
+    {"label": "Results listed", "score": 1.0},
+    {"label": "Scrolls a cluttered list", "score": -1.0, "fix": "Sort by fit", "fix_score": 0.6},
+    {"label": "Filters by rating", "score": 0.5},
+    {"label": "Opens top hotel reviews", "score": 0.2},
+    {"label": "Dislikes it, goes back", "score": -1.2},
+    {"label": "Second hotel looks good", "score": 1.0},
+    {"label": "Price and package fit", "score": 1.5, "why": "Fits my budget"},
+    {"label": "Long booking form", "score": -0.8, "fix": "Autofill details", "fix_score": 0.8},
+    {"label": "Pays, processing", "score": -0.4},
+    {"label": "Booking confirmed", "score": 1.9, "why": "Job done"}
+  ]
+}

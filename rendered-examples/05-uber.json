@@ -1,0 +1,24 @@
+{
+  "title": "Uber: getting home after a concert",
+  "persona": "Concert-goer leaving with thousands of others",
+  "jtbd": "Get home quickly and safely after the event",
+  "trigger": "The show ends and everyone exits at once",
+  "scenario": "Peak demand at a large venue",
+  "success": "In a car within a few minutes, at a price agreed upfront",
+  "steps": [
+    {"label": "Exits the venue", "score": 0.5},
+    {"label": "Opens Uber", "score": 0.5},
+    {"label": "Checks availability", "score": 0},
+    {"label": "Books a ride", "score": 0.8},
+    {"label": "Waits", "score": -0.6},
+    {"label": "Waits longer", "score": -1.3},
+    {"label": "Gives up, cancels", "score": -2.0, "fix": "Event pickup zone", "fix_score": 0.2},
+    {"label": "Walks away from venue", "score": -1.2},
+    {"label": "Books again", "score": -0.3},
+    {"label": "Sees surge price", "score": -1.5, "fix": "Lock price at book", "fix_score": -0.2},
+    {"label": "Accepts surge", "score": -0.8},
+    {"label": "Hunts for pickup spot", "score": -1.0, "fix": "Clear pickup pins", "fix_score": 0.3},
+    {"label": "Finds the car", "score": 1.0},
+    {"label": "Reaches home", "score": 1.5, "why": "Finally home"}
+  ]
+}

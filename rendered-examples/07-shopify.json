@@ -1,0 +1,24 @@
+{
+  "title": "Shopify: a merchant adding a third-party app",
+  "persona": "Growing Shopify merchant",
+  "jtbd": "Plug a gap in the selling lifecycle without hurting the store",
+  "trigger": "Hits obstacles the core product doesn't solve",
+  "scenario": "Finds, trials and later uninstalls an app",
+  "success": "An app that adds revenue, with data handled safely",
+  "steps": [
+    {"label": "Looks for a sales channel", "score": 0.5},
+    {"label": "Registers a store", "score": 1.2},
+    {"label": "Revenue grows", "score": 2.0, "why": "Core product works"},
+    {"label": "Hits selling obstacles", "score": -0.8},
+    {"label": "Searches web for apps", "score": -0.3},
+    {"label": "Searches App Store", "score": -0.3, "fix": "Problem-based search", "fix_score": 0.6},
+    {"label": "Checks ratings", "score": 0.8},
+    {"label": "Starts a trial", "score": 0.8},
+    {"label": "Authorizes the app", "score": 1.0},
+    {"label": "Sees value added", "score": 1.3},
+    {"label": "Upgrades the app", "score": 1.8, "why": "Worth paying for"},
+    {"label": "App degrades results", "score": -1.0, "fix": "Impact alerts", "fix_score": 0.6},
+    {"label": "Uninstalls", "score": -1.5},
+    {"label": "Worries about data", "score": -1.8, "fix": "Deletion receipt", "fix_score": -0.2}
+  ]
+}

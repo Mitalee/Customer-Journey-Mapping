@@ -1,0 +1,21 @@
+{
+  "title": "IRCTC: booking a regular train ticket",
+  "persona": "Working professional booking on a laptop",
+  "jtbd": "Get confirmed seats for a family trip next month",
+  "trigger": "Family decides on the trip dates",
+  "scenario": "Regular (non-Tatkal) booking, happy path",
+  "success": "Confirmed seats in a class the family can live with, at a known price",
+  "steps": [
+    {"label": "Family plans a trip", "score": 0.5},
+    {"label": "Opens IRCTC site", "score": 0.3},
+    {"label": "Login, CAPTCHA, OTP", "score": -1.5, "fix": "Google login", "fix_score": 0.6},
+    {"label": "Finally logs in", "score": 0.2},
+    {"label": "Searches route, sees trains", "score": 1.4, "why": "Trains load fast"},
+    {"label": "No seats in AC classes", "score": -1.6, "fix": "Suggest other trains", "fix_score": 0.8},
+    {"label": "Finds 2 sleeper seats", "score": 0.9},
+    {"label": "Sees dynamic price", "score": -0.6},
+    {"label": "Fills passenger details", "score": -0.3},
+    {"label": "Payment page loading", "score": -1.2, "fix": "Show live status", "fix_score": 0.4},
+    {"label": "Ticket booked", "score": 1.8, "why": "Seat confirmed"}
+  ]
+}

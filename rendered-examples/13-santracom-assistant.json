@@ -1,0 +1,17 @@
+{
+  "title": "Santra.com assistant: is this top right for work?",
+  "persona": "Sarah, 32, anxious first-time online shopper, budget $150",
+  "jtbd": "Buy professional clothing for work presentations with confidence",
+  "trigger": "Has presentations coming up and nothing suitable to wear",
+  "scenario": "Asks the assistant about one item by its clothing ID",
+  "success": "A personal answer that names her concerns, uses real reviews and gives a buy link",
+  "steps": [
+    {"label": "Opens the assistant", "score": 0.5},
+    {"label": "Asks about item 1094", "score": 0.8},
+    {"label": "Bot: no access to IDs", "score": -1.6, "fix": "Catalogue tool", "fix_score": 0.6},
+    {"label": "Gets generic tips", "score": -1.0, "fix": "Ground in reviews", "fix_score": 0.8},
+    {"label": "No buy link offered", "score": -0.8, "fix": "Add buy link", "fix_score": 1.0},
+    {"label": "Concerns ignored", "score": -1.2, "fix": "Use her profile", "fix_score": 1.2},
+    {"label": "Leaves to read reviews", "score": -1.5}
+  ]
+}

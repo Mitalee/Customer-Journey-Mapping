@@ -1,0 +1,22 @@
+{
+  "title": "BookMyShow: a spontaneous evening out",
+  "persona": "Young professional, app already installed and logged in",
+  "jtbd": "Have fun with a friend this evening (not 'book a movie')",
+  "trigger": "Friend calls at 4 pm and suggests the mall and a movie",
+  "scenario": "Browses by nearest cinema",
+  "success": "Out with the friend tonight, tickets on the phone, no surprise costs",
+  "steps": [
+    {"label": "Sitting idle at 4 pm", "score": 0},
+    {"label": "Friend suggests a movie", "score": 1.0},
+    {"label": "Opens BookMyShow", "score": 1.5, "why": "Opens instantly"},
+    {"label": "Ads and pop-ups", "score": -0.8, "fix": "Fewer pop-ups", "fix_score": 0.8},
+    {"label": "Browses nearest cinema", "score": 0.5},
+    {"label": "No movie of interest", "score": -1.5, "fix": "Nearby alternatives", "fix_score": 0.3},
+    {"label": "Finds favourite comedian", "score": 1.8, "why": "Found my comedian"},
+    {"label": "Price looks fine", "score": 1.2},
+    {"label": "Books 2 tickets", "score": 1.3},
+    {"label": "Sees about 10% fee", "score": -0.8, "fix": "Show fee upfront", "fix_score": 0.8},
+    {"label": "Pays by UPI", "score": 0.3},
+    {"label": "QR code on WhatsApp", "score": 1.6, "why": "Nothing to carry"}
+  ]
+}

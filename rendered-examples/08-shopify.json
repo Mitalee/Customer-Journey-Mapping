@@ -1,0 +1,25 @@
+{
+  "title": "Shopify: an app developer's journey",
+  "persona": "Indie app developer",
+  "jtbd": "Build a profitable app on the Shopify ecosystem",
+  "trigger": "Spots a gap in what Shopify merchants can do",
+  "scenario": "Builds, gets listed, gains then loses a merchant",
+  "success": "Listed app with merchants who keep paying",
+  "steps": [
+    {"label": "Researches product gaps", "score": 0.5},
+    {"label": "Checks profitability", "score": 1.2},
+    {"label": "Tests auth in sandbox", "score": -1.0, "fix": "Better sandbox", "fix_score": 0.4},
+    {"label": "Adds integration points", "score": 0.3},
+    {"label": "Builds an MVP", "score": 0.8},
+    {"label": "Submits the app", "score": 1.2},
+    {"label": "Eligibility review", "score": -1.5, "fix": "Review checklist", "fix_score": 0.3},
+    {"label": "Revenue path attached", "score": 0},
+    {"label": "App published", "score": 1.0},
+    {"label": "Merchant trials it", "score": 1.8},
+    {"label": "Merchant authorizes", "score": 1.9, "why": "First real user"},
+    {"label": "Merchant upgrades", "score": 0.5},
+    {"label": "Merchant hits a problem", "score": -1.8, "fix": "Health signals", "fix_score": 0.2},
+    {"label": "Merchant uninstalls", "score": -2.0},
+    {"label": "Deletes merchant data", "score": -1.2}
+  ]
+}
